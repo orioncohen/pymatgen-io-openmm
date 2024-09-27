@@ -56,7 +56,7 @@ class InputMoleculeSpec(BaseModel):
     name: Optional[str] = None
     charge_scaling: Optional[confloat(ge=0.1, le=10)] = 1.0  # type: ignore
     force_field: Optional[constr(to_lower=True)] = None  # type: ignore
-    geometries: Optional[List[Geometry]] = None
+    geometries: Optional[List[Union[str, Path]]] = None
     partial_charges: Optional[List[float]] = None
     charge_method: Optional[str] = None
     max_conformers: PositiveInt = 1
